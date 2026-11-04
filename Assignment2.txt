@@ -1,0 +1,29 @@
+Assignment 2 Questions
+
+1. When compared to ArrayLists, LinkedLists should be used when there is a large number of additions or deletions. Explain why this is the case.
+
+An ArrayList stores its elements in one contiguous array. Adding or removing anywhere except the end means shifting every later element over by one position, which is O(n). When the array is full, adding also means allocating a larger array and copying everything into it. A LinkedList only has to change the references of the neighboring nodes, so once it is at the position, the addition or deletion is O(1), and nothing is shifted or copied. Additions and deletions at the front or end of a LinkedList are always O(1). Reaching a position in the middle still takes O(n) traversal, so the advantage is greatest at the ends of the list or while already iterating through it.
+
+2. What is the internal data structure of an ArrayList?
+
+A resizable array of Object references (Object[]). When it runs out of capacity, a larger array is allocated and the elements are copied into it.
+
+3. What is the internal data structure of a LinkedList?
+
+A doubly linked list. Each node holds an element, a reference to the next node and a reference to the previous node. The list keeps references to the first and last nodes.
+
+4. To what java package do all Java Collection Framework classes belong?
+
+java.util
+
+5. What Car method gets executed when the List method contains is used?
+
+equals(Object). contains calls equals on the Car being searched for, once per list element, until a match is found or the list ends.
+
+6. What Boat method gets executed when the List method remove is used?
+
+equals(Object) when using remove(Object): the list calls equals on the Boat passed in to find the first matching element. remove(int index), which is the version used in this assignment, goes directly to the position and does not call any Boat method.
+
+7. What class originally defines the equals() method? Describe exactly what the originally defined equals() class does and why we need to override it in classes we construct.
+
+The Object class defines equals(). The original version compares references (this == obj), so it returns true only when both references point to the exact same object in memory. It does not look at attribute values. We override it so that two separate objects with the same attribute values are considered equal. Without the override, a new Car(PowerTypes.FUELOIL, 6) would never be equal to a different Car object with the same values, and methods that rely on equals, such as contains, would return false even though an equivalent Car is in the list.

@@ -1,0 +1,97 @@
+String list isEmpty before reading file: true
+Vehicle list isEmpty before reading file: true
+
+--- Reading strings.txt ---
+Strings added: 7
+
+--- Reading vehicles.txt ---
+Line 1 added: Car [engineSize=4, powerSource=GASOLINE]
+Line 2 added: Boat [boatLength=100, powerSource=GASOLINE]
+Line 3 discarded "": Expected 3 fields, found 1
+Line 4 discarded "b,,": No enum constant edu.monmouth.vehicle.PowerTypes.
+Line 5 discarded "d,FUELOIL,100": Unknown vehicle type "d"
+Line 6 added: Car [engineSize=6, powerSource=FUELOIL]
+Line 7 discarded "b,FUELOIL, 25": For input string: " 25"
+Line 8 added: Car [engineSize=6, powerSource=DEISEL]
+Line 9 added: Boat [boatLength=300, powerSource=ELECTRICITY]
+Line 10 discarded "b,FUELOIL,300 c,GASOLINE,9": Expected 3 fields, found 5
+Line 11 discarded "c,GASOLINE,-98": Invalid engine size -98: must be between 1 and 199
+Line 12 discarded "c,GASOLINE,20o": For input string: "20o"
+Line 13 discarded "c,GASOLINE": Expected 3 fields, found 2
+Line 14 discarded "b,FUELOIL,81902": Invalid boat length 81902: must be between 1 and 1300
+Line 15 added: Car [engineSize=10, powerSource=ELECTRICITY]
+Line 16 added: Car [engineSize=9, powerSource=FUELOIL]
+Line 17 added: Boat [boatLength=42, powerSource=ELECTRICITY]
+Line 18 added: Car [engineSize=4, powerSource=GASOLINE]
+Vehicles added: 9
+
+===== String List =====
+isEmpty: false
+
+Iterating over the list before remove:
+  Monmouth University
+  Boardwalk
+  West Long Branch
+  Great Hall
+  1933
+  Seven Presidents
+  New Jersey
+
+remove(1) removed: Boardwalk
+Iterating over the list after remove:
+  Monmouth University
+  West Long Branch
+  Great Hall
+  1933
+  Seven Presidents
+  New Jersey
+
+add inserted: Added String
+Iterating over the list after add:
+  Monmouth University
+  West Long Branch
+  Great Hall
+  1933
+  Seven Presidents
+  New Jersey
+  Added String
+
+===== Vehicle List =====
+isEmpty: false
+
+Iterating over the list before remove:
+  Car [engineSize=4, powerSource=GASOLINE]
+  Boat [boatLength=100, powerSource=GASOLINE]
+  Car [engineSize=6, powerSource=FUELOIL]
+  Car [engineSize=6, powerSource=DEISEL]
+  Boat [boatLength=300, powerSource=ELECTRICITY]
+  Car [engineSize=10, powerSource=ELECTRICITY]
+  Car [engineSize=9, powerSource=FUELOIL]
+  Boat [boatLength=42, powerSource=ELECTRICITY]
+  Car [engineSize=4, powerSource=GASOLINE]
+
+remove(1) removed: Boat [boatLength=100, powerSource=GASOLINE]
+Iterating over the list after remove:
+  Car [engineSize=4, powerSource=GASOLINE]
+  Car [engineSize=6, powerSource=FUELOIL]
+  Car [engineSize=6, powerSource=DEISEL]
+  Boat [boatLength=300, powerSource=ELECTRICITY]
+  Car [engineSize=10, powerSource=ELECTRICITY]
+  Car [engineSize=9, powerSource=FUELOIL]
+  Boat [boatLength=42, powerSource=ELECTRICITY]
+  Car [engineSize=4, powerSource=GASOLINE]
+
+add inserted: Plane [Model=Boeing350, powerSource=DEISEL]
+Iterating over the list after add:
+  Car [engineSize=4, powerSource=GASOLINE]
+  Car [engineSize=6, powerSource=FUELOIL]
+  Car [engineSize=6, powerSource=DEISEL]
+  Boat [boatLength=300, powerSource=ELECTRICITY]
+  Car [engineSize=10, powerSource=ELECTRICITY]
+  Car [engineSize=9, powerSource=FUELOIL]
+  Boat [boatLength=42, powerSource=ELECTRICITY]
+  Car [engineSize=4, powerSource=GASOLINE]
+  Plane [Model=Boeing350, powerSource=DEISEL]
+
+contains(Car [engineSize=6, powerSource=FUELOIL]): true
+contains(Car [engineSize=6, powerSource=ELECTRICITY]): false
