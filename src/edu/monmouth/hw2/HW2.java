@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 import edu.monmouth.vehicle.Boat;
 import edu.monmouth.vehicle.BoatException;
@@ -44,7 +45,64 @@ public class HW2
 		System.out.println("\n===== Vehicle List =====");
 		exerciseList(vehicles, new Plane("Boeing350", PowerTypes.DEISEL));
 		exerciseContains(vehicles);
+
+		System.out.println("\n========== Part 2 ==========");
+
+		System.out.println("\n===== String List =====");
+		printSize(strings);
+		printForward(strings);
+		printReverse(strings);
+
+		System.out.println("\n===== Vehicle List =====");
+		printSize(vehicles);
+		printForward(vehicles);
+		printReverse(vehicles);
+
+		// d. remove(Object) with a newly constructed Vehicle, so the match can only come from equals()
+		try
+		{
+			Vehicle toRemove = new Boat(PowerTypes.ELECTRICITY, 300);
+			System.out.println("\nremove(" + toRemove + "): " + vehicles.remove(toRemove));
+			System.out.println("size() after remove: " + vehicles.size());
+
+			System.out.println("Iterating over the list after remove(Object):");
+			printList(vehicles);
+		}
+		catch (BoatException e)
+		{
+			System.err.println("Cannot create Boat for remove: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
+
+	// a. number of elements using the List size() method
+	private static void printSize(List<?> list)
+	{
+		System.out.println("size(): " + list.size());
+	}
+
+	// b. ListIterator forward navigation: start at the beginning and move with next()
+	private static void printForward(List<?> list)
+	{
+		System.out.println("\nListIterator forward navigation:");
+		ListIterator<?> iterator = list.listIterator();
+		while (iterator.hasNext())
+		{
+			System.out.println("  " + iterator.next());
+		}
+	}
+
+	// c. ListIterator reverse navigation: start past the last element and move with previous()
+	private static void printReverse(List<?> list)
+	{
+		System.out.println("\nListIterator reverse navigation:");
+		ListIterator<?> iterator = list.listIterator(list.size());
+		while (iterator.hasPrevious())
+		{
+			System.out.println("  " + iterator.previous());
+		}
+	}
+
 
 	// verify command line arguments and redirect STDOUT & STDERR to the file named in the first argument
 	private static void initialize(String[] args)

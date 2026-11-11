@@ -95,3 +95,63 @@ Iterating over the list after add:
 
 contains(Car [engineSize=6, powerSource=FUELOIL]): true
 contains(Car [engineSize=6, powerSource=ELECTRICITY]): false
+
+========== Part 2 ==========
+
+===== String List =====
+size(): 7
+
+ListIterator forward navigation:
+  Monmouth University
+  West Long Branch
+  Great Hall
+  1933
+  Seven Presidents
+  New Jersey
+  Added String
+
+ListIterator reverse navigation:
+  Added String
+  New Jersey
+  Seven Presidents
+  1933
+  Great Hall
+  West Long Branch
+  Monmouth University
+
+===== Vehicle List =====
+size(): 9
+
+ListIterator forward navigation:
+  Car [engineSize=4, powerSource=GASOLINE]
+  Car [engineSize=6, powerSource=FUELOIL]
+  Car [engineSize=6, powerSource=DEISEL]
+  Boat [boatLength=300, powerSource=ELECTRICITY]
+  Car [engineSize=10, powerSource=ELECTRICITY]
+  Car [engineSize=9, powerSource=FUELOIL]
+  Boat [boatLength=42, powerSource=ELECTRICITY]
+  Car [engineSize=4, powerSource=GASOLINE]
+  Plane [Model=Boeing350, powerSource=DEISEL]
+
+ListIterator reverse navigation:
+  Plane [Model=Boeing350, powerSource=DEISEL]
+  Car [engineSize=4, powerSource=GASOLINE]
+  Boat [boatLength=42, powerSource=ELECTRICITY]
+  Car [engineSize=9, powerSource=FUELOIL]
+  Car [engineSize=10, powerSource=ELECTRICITY]
+  Boat [boatLength=300, powerSource=ELECTRICITY]
+  Car [engineSize=6, powerSource=DEISEL]
+  Car [engineSize=6, powerSource=FUELOIL]
+  Car [engineSize=4, powerSource=GASOLINE]
+
+remove(Boat [boatLength=300, powerSource=ELECTRICITY]): true
+size() after remove: 8
+Iterating over the list after remove(Object):
+  Car [engineSize=4, powerSource=GASOLINE]
+  Car [engineSize=6, powerSource=FUELOIL]
+  Car [engineSize=6, powerSource=DEISEL]
+  Car [engineSize=10, powerSource=ELECTRICITY]
+  Car [engineSize=9, powerSource=FUELOIL]
+  Boat [boatLength=42, powerSource=ELECTRICITY]
+  Car [engineSize=4, powerSource=GASOLINE]
+  Plane [Model=Boeing350, powerSource=DEISEL]
